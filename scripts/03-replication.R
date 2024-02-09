@@ -54,10 +54,40 @@ models <- lapply(names(var2name), function(var) {
 stargazer(models, type = "html", out = "outputs/tables/business_outcome.html",
           title = "Business Outcome",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
+          column.labels = var2name,
           add.lines = list(c("N", paste(sapply(models, function(x) sum(!is.na(x$model[[1]])))), collapse = " ")),
           single.row = TRUE, font.size = "small", digits = 2,
           no.space = TRUE)
 
+# replicate results for business outcome by gender
+female_data <- subset(data, is_male == 0)
+male_data <- subset(data,  is_male == 1)
+
+male_models <- lapply(names(var2name), function(var) {
+  regress(male_data, var, "outputs/figures/male", var2name)
+})
+
+female_models <- lapply(names(var2name), function(var) {
+  regress(female_data, var, "outputs/figures/female", var2name)
+})
+
+
+stargazer(female_models, type = "html", out = "outputs/tables/business_outcome_female.html",
+          title = "Business Outcome - Female Participants",
+          covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
+          column.labels = var2name,
+          add.lines = list(c("N", paste(sapply(models, function(x) sum(!is.na(x$model[[1]])))), collapse = " ")),
+          single.row = TRUE, font.size = "small", digits = 2,
+          no.space = TRUE)
+
+
+stargazer(male_models, type = "html", out = "outputs/tables/business_outcome_male.html",
+          title = "Business Outcome - Male Participants",
+          covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
+          column.labels = var2name,
+          add.lines = list(c("N", paste(sapply(models, function(x) sum(!is.na(x$model[[1]])))), collapse = " ")),
+          single.row = TRUE, font.size = "small", digits = 2,
+          no.space = TRUE)
 
 # replicate results for income outcome estimands
 var2name <- c(
@@ -72,6 +102,33 @@ models <- lapply(names(var2name), function(var) {
 stargazer(models, type = "html", out = "outputs/tables/income_outcome.html",
           title = "Income Outcome",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
+          column.labels = var2name,
+          add.lines = list(c("N", paste(sapply(models, function(x) sum(!is.na(x$model[[1]])))), collapse = " ")),
+          single.row = TRUE, font.size = "small", digits = 2,
+          no.space = TRUE)
+
+male_models <- lapply(names(var2name), function(var) {
+  regress(male_data, var, "outputs/figures/male", var2name)
+})
+
+female_models <- lapply(names(var2name), function(var) {
+  regress(female_data, var, "outputs/figures/female", var2name)
+})
+
+
+stargazer(female_models, type = "html", out = "outputs/tables/income_outcome_female.html",
+          title = "Income Outcome - Female Participants",
+          covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
+          column.labels = var2name,
+          add.lines = list(c("N", paste(sapply(models, function(x) sum(!is.na(x$model[[1]])))), collapse = " ")),
+          single.row = TRUE, font.size = "small", digits = 2,
+          no.space = TRUE)
+
+
+stargazer(male_models, type = "html", out = "outputs/tables/income_outcome_male.html",
+          title = "Income Outcome - Male Participants",
+          covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
+          column.labels = var2name,
           add.lines = list(c("N", paste(sapply(models, function(x) sum(!is.na(x$model[[1]])))), collapse = " ")),
           single.row = TRUE, font.size = "small", digits = 2,
           no.space = TRUE)
@@ -110,5 +167,4 @@ stargazer(models, type = "html", title = "Table 1: Baseline Balance",
           covariate.labels = c("Control", "Microcredit", "In-Kind Grant", "Cash Grant"),
           column.labels = varname,
           omit.stat = c("f")) 
-
 
