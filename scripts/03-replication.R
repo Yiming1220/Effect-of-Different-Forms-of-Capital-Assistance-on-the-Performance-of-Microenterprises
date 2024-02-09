@@ -3,16 +3,22 @@ library(ggplot2)
 library(dplyr)
 library(knitr)
 library(kableExtra)
+library(stargazer)
+
+# load dataset
+data <- read_csv("inputs/data/cleaned_data.csv")
 
 # define a function to perform the regression for the treatment and a outcome variable
 # This function do the linear regression, save the regression plot in the specified file path, and prepare to draw the summary table
 regress <- function(data, outcome, file_path, var2name) {
   name <- var2name[[outcome]]
+  # regression
   fit <- lm(reformulate(c("micro_credit", "in_kind_grant", "cash_grant"), response = outcome), data = data)
   
   coefs <- summary(fit)$coefficients
   confint <- confint(fit)
   
+  # regression plot
   plot_data <- data.frame(
     Treatment = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
     Estimate = coefs[2:4, 1],
@@ -29,21 +35,10 @@ regress <- function(data, outcome, file_path, var2name) {
   full_file_path <- paste0(file_path, name, ".jpg")
   ggsave(full_file_path, plot = regression_plot, width = 8, height = 6, dpi = 300)
   
-  formatted_coefs <- paste0(
-    round(coefs[2:4, "Estimate"], 2), 
-    " (", 
-    round(coefs[2:4, "Std. Error"], 2), 
-    ")"
-  )
-  
-  N <- sum(!is.na(data[[outcome]]))
-  
-  summary_df <- data.frame(Values = c(formatted_coefs, N))
-  names(summary_df) <- name
-
-  return(summary_df)
+  return(fit)
 }
 
+# replicate results for business outcome estimands
 var2name <- c(
   hasbiz = "Has Business",
   new_biz_assets = "New Asset",
@@ -52,21 +47,68 @@ var2name <- c(
   monthly_profits = "Monthly Profit"
 )
 
-data <- read_csv("inputs/data/cleaned_data.csv")
-outcome_vars <- names(var2name)
-combined_summary <- list()
+models <- lapply(names(var2name), function(var) {
+  regress(data, var, "outputs/figures/", var2name)
+})
 
-for (var in outcome_vars) {
-  summary_df <- regress(data, var, "outputs/figures/", var2name)
-  combined_summary[[var]] <- summary_df
-}
+stargazer(models, type = "html", out = "outputs/tables/business_outcome.html",
+          title = "Business Outcome",
+          covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
+          add.lines = list(c("N", paste(sapply(models, function(x) sum(!is.na(x$model[[1]])))), collapse = " ")),
+          single.row = TRUE, font.size = "small", digits = 2,
+          no.space = TRUE)
 
-combined_summary_df <- do.call(cbind, combined_summary)
-row.names(combined_summary_df) <- c("Micro Credit", "In-Kind Grant", "Cash Grant", "N")
 
-html_table <- kable(combined_summary_df, "html", booktabs = TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+# replicate results for income outcome estimands
+var2name <- c(
+  labour_inc = "Labour Income",
+  total_inc = "Total Income"
+)
 
-html_file_path <- "outputs/tables/summary_table.html"
-save_kable(html_table, file = html_file_path)
+models <- lapply(names(var2name), function(var) {
+  regress(data, var, "outputs/figures/", var2name)
+})
+
+stargazer(models, type = "html", out = "outputs/tables/income_outcome.html",
+          title = "Income Outcome",
+          covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
+          add.lines = list(c("N", paste(sapply(models, function(x) sum(!is.na(x$model[[1]])))), collapse = " ")),
+          single.row = TRUE, font.size = "small", digits = 2,
+          no.space = TRUE)
+
+
+# replicate balance check
+data$treatment_status <- factor(data$treatment_status)
+varlist <- c("is_male","educ_college","educ_somecollege","educ_hs",
+                           "age","marital_m","worked","has_biz",
+                           "family_inc_low","migrate","trained","has_kids")
+
+varname <- c(
+  "is_male" = "Male",
+  "educ_college" = "College Education",
+  "educ_somecollege" = "Some College Education",
+  "educ_hs" = "High School Education",
+  "age" = "Age",
+  "marital_m" = "Married",
+  "worked" = "Worked Before",
+  "has_biz" = "Has a Business",
+  "family_inc_low" = "Low Family Income",
+  "migrate" = "Migration Desire",
+  "trained" = "Received Training",
+  "has_kids" = "Has Kids"
+)
+
+models <- lapply(varlist, function(var) {
+  lm(reformulate("treatment_status", response = var), data = data)
+})
+
+stargazer(models, type = "html", title = "Table 1: Baseline Balance",
+          font.size = "small", digits = 2,
+          no.space = TRUE, single.row = TRUE,
+          out = "outputs/tables/baseline_balance.html",
+          add.names = TRUE,
+          covariate.labels = c("Control", "Microcredit", "In-Kind Grant", "Cash Grant"),
+          column.labels = varname,
+          omit.stat = c("f")) 
+
 

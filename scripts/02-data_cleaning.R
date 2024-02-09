@@ -81,7 +81,7 @@ new_data$monthly_profits <- fill_na(monthly_profits, 0)
 # total income is calculated by monthly profit, wage income, 
 wage_inc <- fill_na(out_data$wage_month, 0)
 other_labour_inc <- ifelse(out_data$other_income_source %in% c(2, 4), out_data$other_income_source, NA)
-other_labour_inc <- fill_na(other_labor_inc, 0)
+other_labour_inc <- fill_na(other_labour_inc, 0)
 rent_income <- fill_na(out_data$rent_asset, 0)
 other_inc <- fill_na(out_data$other_income, 0)
 gov_inc <- fill_na(out_data$received_govsupport_value, 0)
@@ -94,7 +94,7 @@ new_data$total_inc <- out_data$monthly_profits + rent_income + other_inc + gov_i
 # gender, using female as reference
 new_data$is_male <- ifelse(pre_data$gender_rand == 1, 1, 0)
 
-# education categories, using less than high school as reference
+# education categories
 new_data$educ_college <- ifelse(pre_data$edu == 88, 1, 0)
 new_data$educ_somecollege <- ifelse(pre_data$edu == 77, 1, 0)
 new_data$educ_hs <- ifelse(pre_data$edu == 66, 1, 0)
@@ -102,7 +102,7 @@ new_data$educ_hs <- ifelse(pre_data$edu == 66, 1, 0)
 # age
 new_data$age <- 2017 - pre_data$birth_year
 
-# marital status, using 
+# marital status
 new_data$marital_s <- ifelse(pre_data$marital == 1, 1, 0)
 new_data$marital_m <- ifelse(pre_data$marital == 2, 1, 0)
 
@@ -112,24 +112,16 @@ new_data$worked <- ifelse(pre_data$worked_before %in% c(2, 99, NA), 0, 1)
 # business ownership
 new_data$has_biz <- ifelse(pre_data$emp_type %in% c("3", "4"), 1, 0)
 
-# family income, using high income as reference
+# low family income
 new_data$family_inc_low <- ifelse(pre_data$family_inc %in% c(1, 2), 1, 0)
-new_data$family_inc_mid <- ifelse(pre_data$family_inc %in% c(3, 4, 5), 1, 0)
-
-# borrowing
-new_data$formal_loan <- ifelse(pre_data$last_loan_source %in% c(1, 2), 1, 0)
-new_data$family_loan <- pre_data$last_loan_source == 3
-new_data$rosca <- pre_data$last_loan_source == 4
-new_data$any_borrowing <- pre_data$loan_fund == 1
 
 # migration desire
-new_data$migrate <- pre_data$migrate_yesno == 1
+new_data$migrate <- ifelse(pre_data$migrate_yesno == 1, 1, 0)
 
 # training received
 new_data$trained <- ifelse(pre_data$training_type != 0 & pre_data$treatment_status %in% c(1, 2, 3), 1, 0)
 
 # has kids
-# Having kids is binary, no need for a reference category
 new_data$has_kids <- ifelse(pre_data$child == 1, 1, 0)
 
 # save data
