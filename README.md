@@ -1,3 +1,5 @@
+# Analysis of impacts of financial supports on business and income outcomes and gender-specific research
+
 # Statement of LLM Usage
 
 Part of the code and analysis were completed with the help of ChatGPT. ChatGPT also provided some hints and explanations of our research as references. The entire chat history is available in:
