@@ -11,7 +11,7 @@ This repo is created by   , which contains the data, code for processing data an
 
 The repo is structured as the following:
 
-* Inputs: contains the raw data used in the study
+* Inputs: contains the raw data used in the study and file of coversations with Chatgpt
 * Outputs: contains the tables and graphs used in the paper, Quarto document of the paper, PDF of the paper and bibliography file.
 * scripts: contains the R scripts used to simulate, clean and replicate the data. 
 
