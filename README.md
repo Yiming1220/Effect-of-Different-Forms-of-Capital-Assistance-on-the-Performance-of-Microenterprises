@@ -1,4 +1,4 @@
-# Analysis of impacts of financial supports on business and income outcomes and gender-specific research
+# Assessing the Impact of Financial Assistances on Business and Income Outcomes: A Gender-Specific Analysis"
 
 ## Statement of LLM Usage
 
