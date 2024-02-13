@@ -12,6 +12,8 @@ This repo is created by Yingqi Pang,   , and Dingning Li, which contains the dat
 The repo is structured as the following:
 
 * Inputs: contains the raw data used in the study and file of coversations with Chatgpt
+
 * Outputs: contains the tables and graphs used in the paper, Quarto document of the paper, PDF of the paper and bibliography file.
+
 * scripts: contains the R scripts used to simulate, clean and replicate the data. 
 
