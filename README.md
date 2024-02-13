@@ -5,7 +5,7 @@ Part of the code and analysis were completed with the help of ChatGPT. ChatGPT a
 
 # Overview
 
-This repo is created by Yingqi Pang,   , and Dingning Li, which contains the data, code for processing data and final output of our research. Based on the research paper written by Crépon et al(2022), we tried to replicate some of parts of their research based on the original data they used. 
+This repo is created by Yingqi Pang, Yiming Tang and Dingning Li, which contains the data, code for processing data and final output of our research. Based on the research paper written by Crépon et al(2022), we tried to replicate some of parts of their research based on the original data they used. 
 
 # File Structure
 
