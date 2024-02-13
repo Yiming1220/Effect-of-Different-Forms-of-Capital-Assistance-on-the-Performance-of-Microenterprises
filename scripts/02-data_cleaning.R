@@ -1,11 +1,14 @@
 #### Preamble ####
-# Purpose: Cleans the raw plane data recorded by two observers..... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
+
+# Purpose: Clean and prepare the dataset derived from the original study.
+# The cleaning process includes loading datasets, merging pre- and post-intervention data, 
+# filtering for consistency, handling missing values, and encoding categorical 
+
+# Author: Yiming Tang
+# Date: 10 Feb 2024
+# Contact: ym.tang@mail.utoronto.ca
 # License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Pre-requisites: R epackages `haven`, `dplyr`, and `tidyverse` installed. 
 
 #### Workspace setup ####
 library(haven)

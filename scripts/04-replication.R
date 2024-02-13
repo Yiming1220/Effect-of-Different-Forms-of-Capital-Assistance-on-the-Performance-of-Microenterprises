@@ -1,3 +1,16 @@
+#### Preamble ####
+
+# Purpose: This script is designed to replicate the findings of the original study
+# on the impact of financial interventions on microenterprise performance, considering gender differences. 
+# The replication process involves regression analyses to assess the effects of loans, 
+# cash grants, and in-kind grants on key business outcomes.
+
+# Author: Yiming Tang
+# Date: 10 Feb 2024
+# Contact: ym.tang@utoronto.ca
+# License: MIT
+# Pre-requisites: R environment with packages 'readr',  'ggplot2', `dplyr`, 'dplyr', 'knitr', 
+# 'kableExtra', and 'stargazer' installed.
 library(readr)
 library(ggplot2)
 library(dplyr)
@@ -159,7 +172,7 @@ models <- lapply(varlist, function(var) {
   lm(reformulate("treatment_status", response = var), data = data)
 })
 
-stargazer(models, type = "html", title = "Table 1: Baseline Balance",
+stargazer(models, type = "html", title = "Baseline Balance",
           font.size = "small", digits = 2,
           no.space = TRUE, single.row = TRUE,
           out = "outputs/tables/baseline_balance.html",
