@@ -1,13 +1,10 @@
 ---
 title: "Assessing the Impact of Financial Assistances on Business and Income Outcomes: A Gender-Specific Analysis"
 author: Dingning Li, Yiming Tang, Yingqi Pang 
+abstract: "This study replicates and extends the investigation into the differential impacts of financial support on microenterprise performance, considering the gender of entrepreneurs. Analyzing data from 3,294 entrepreneurs, we explored the impact of loans, cash grants, and in-kind grants on business ownership, assets, and profitability, while accounting for personal characteristics. We found that all forms of financial support positively affect microenterprise growth, but in-kind grants are particularly beneficial, especially for female entrepreneurs. This research points to the importance of customizing financial interventions to consider gender, aiming to support economic empowerment and microenterprise resilience.
 date: “`r format(Sys.time(), '%d %B %Y')`”
 format: pdf
 ---
-
-# Abstract
-
-This study replicates and extends the investigation into the differential impacts of financial support on microenterprise performance, considering the gender of entrepreneurs. Analyzing data from 3,294 entrepreneurs, we explored the impact of loans, cash grants, and in-kind grants on business ownership, assets, and profitability, while accounting for personal characteristics. We found that all forms of financial support positively affect microenterprise growth, but in-kind grants are particularly beneficial, especially for female entrepreneurs. This research points to the importance of customizing financial interventions to consider gender, aiming to support economic empowerment and microenterprise resilience.
 
 # Introduction
 
