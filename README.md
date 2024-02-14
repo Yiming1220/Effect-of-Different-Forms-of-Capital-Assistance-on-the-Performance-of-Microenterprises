@@ -14,11 +14,15 @@ This repo is created by Yingqi Pang, Yiming Tang and Dingning Li, which contains
 
 The repo is structured as the following:
 
-* Data: contains the raw and cleaned data used in the study 
+* Inputs: contains the raw and cleaned data used in the study 
 
 * scripts: contains the R scripts used to simulate, download, clean, test the data and conduct replicate analysis. 
 
-* Other: contains 1) sketches, contains the tables and graphs used in the paper; 2) llm, contains the detailed llm usage documentation links. 
+* Outputs (sketches): contains contains the tables and figure used in the paper
+
+* Paper: contains markdown and pdf output of the paper.
+  
+* llm: contains the detailed llm usage documentation links.
 
 ## Statement of LLM Usage
 
