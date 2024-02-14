@@ -11,6 +11,8 @@
 # License: MIT
 # Pre-requisites: R environment with packages 'readr',  'ggplot2', `dplyr`, 'dplyr', 'knitr', 
 # 'kableExtra', and 'stargazer' installed.
+
+#### Workspace setup ####
 library(readr)
 library(ggplot2)
 library(dplyr)
@@ -18,8 +20,10 @@ library(knitr)
 library(kableExtra)
 library(stargazer)
 
+#### Replication ####
+
 # load dataset
-data <- read_csv("inputs/data/cleaned_data.csv")
+data <- read_csv("data/cleaned_data.csv")
 
 # define a function to perform the regression for the treatment and a outcome variable
 # This function do the linear regression, save the regression plot in the specified file path, and prepare to draw the summary table
@@ -61,10 +65,10 @@ var2name <- c(
 )
 
 models <- lapply(names(var2name), function(var) {
-  regress(data, var, "outputs/figures/", var2name)
+  regress(data, var, "other/sketches/figures/", var2name)
 })
 
-stargazer(models, type = "html", out = "outputs/tables/business_outcome.html",
+stargazer(models, type = "html", out = "other/sketches/tables/business_outcome.html",
           title = "Business Outcome",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -76,16 +80,32 @@ stargazer(models, type = "html", out = "outputs/tables/business_outcome.html",
 female_data <- subset(data, is_male == 0)
 male_data <- subset(data,  is_male == 1)
 
+var2name <- c(
+  hasbiz = "Male - Has Business",
+  new_biz_assets = "Male - New Asset",
+  monthly_expanses = "Male - Monthly Expenditure",
+  monthly_revenue = "Male - Monthly Revenue",
+  monthly_profits = "Male - Monthly Profit"
+)
+
 male_models <- lapply(names(var2name), function(var) {
-  regress(male_data, var, "outputs/figures/male", var2name)
+  regress(male_data, var, "other/sketches/figures/male", var2name)
 })
+
+var2name <- c(
+  hasbiz = "Female - Has Business",
+  new_biz_assets = "Female - New Asset",
+  monthly_expanses = "Female - Monthly Expenditure",
+  monthly_revenue = "Female - Monthly Revenue",
+  monthly_profits = "Female - Monthly Profit"
+)
 
 female_models <- lapply(names(var2name), function(var) {
-  regress(female_data, var, "outputs/figures/female", var2name)
+  regress(female_data, var, "other/sketches/figures/female", var2name)
 })
 
 
-stargazer(female_models, type = "html", out = "outputs/tables/business_outcome_female.html",
+stargazer(female_models, type = "html", out = "other/sketches/tables/business_outcome_female.html",
           title = "Business Outcome - Female Participants",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -94,7 +114,7 @@ stargazer(female_models, type = "html", out = "outputs/tables/business_outcome_f
           no.space = TRUE)
 
 
-stargazer(male_models, type = "html", out = "outputs/tables/business_outcome_male.html",
+stargazer(male_models, type = "html", out = "other/sketches/tables/business_outcome_male.html",
           title = "Business Outcome - Male Participants",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -109,10 +129,10 @@ var2name <- c(
 )
 
 models <- lapply(names(var2name), function(var) {
-  regress(data, var, "outputs/figures/", var2name)
+  regress(data, var, "other/sketches/figures/", var2name)
 })
 
-stargazer(models, type = "html", out = "outputs/tables/income_outcome.html",
+stargazer(models, type = "html", out = "other/sketches/tables/income_outcome.html",
           title = "Income Outcome",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -120,16 +140,26 @@ stargazer(models, type = "html", out = "outputs/tables/income_outcome.html",
           single.row = TRUE, font.size = "small", digits = 2,
           no.space = TRUE)
 
+var2name <- c(
+  labour_inc = "Male - Labour Income",
+  total_inc = "Male - Total Income"
+)
+
 male_models <- lapply(names(var2name), function(var) {
-  regress(male_data, var, "outputs/figures/male", var2name)
+  regress(male_data, var, "other/sketches/figures/male", var2name)
 })
+
+var2name <- c(
+  labour_inc = "Female - Labour Income",
+  total_inc = "Female - Total Income"
+)
 
 female_models <- lapply(names(var2name), function(var) {
-  regress(female_data, var, "outputs/figures/female", var2name)
+  regress(female_data, var, "other/sketches/figures/female", var2name)
 })
 
 
-stargazer(female_models, type = "html", out = "outputs/tables/income_outcome_female.html",
+stargazer(female_models, type = "html", out = "other/sketches/tables/income_outcome_female.html",
           title = "Income Outcome - Female Participants",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -138,7 +168,7 @@ stargazer(female_models, type = "html", out = "outputs/tables/income_outcome_fem
           no.space = TRUE)
 
 
-stargazer(male_models, type = "html", out = "outputs/tables/income_outcome_male.html",
+stargazer(male_models, type = "html", out = "other/sketches/tables/income_outcome_male.html",
           title = "Income Outcome - Male Participants",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -175,7 +205,7 @@ models <- lapply(varlist, function(var) {
 stargazer(models, type = "html", title = "Baseline Balance",
           font.size = "small", digits = 2,
           no.space = TRUE, single.row = TRUE,
-          out = "outputs/tables/baseline_balance.html",
+          out = "other/sketches/tables/baseline_balance.html",
           add.names = TRUE,
           covariate.labels = c("Control", "Microcredit", "In-Kind Grant", "Cash Grant"),
           column.labels = varname,

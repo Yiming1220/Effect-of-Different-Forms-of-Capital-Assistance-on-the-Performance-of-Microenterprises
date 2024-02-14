@@ -59,7 +59,7 @@ simulated_dataset <- data.frame(treatment_status, control, micro_credit,
                                 monthly_expanses, monthly_revenue, monthly_profits, 
                                 labour_inc, total_inc, age, migrate, educ_college, 
                                 educ_somecollege, educ_hs, marital_s, marital_m)
-write.csv(simulated_dataset, file = "inputs/data/simulated.csv", row.names = FALSE)
+write.csv(simulated_dataset, file = "data/simulated.csv", row.names = FALSE)
 
 
                                

@@ -26,8 +26,8 @@ fill_na <- function(var, val) {
 #### Clean data ####
 
 # load dataset
-pre_data_path <- "inputs/data/AEJ_CKO_baseline.dta"
-out_data_path <- "inputs/data/AEJ_CKO_endline.dta"
+pre_data_path <- "data/AEJ_CKO_baseline.dta"
+out_data_path <- "data/AEJ_CKO_endline.dta"
 pre_data <- read_dta(pre_data_path)
 out_data <- read_dta(out_data_path)
 pre_data <- pre_data %>%
@@ -128,4 +128,4 @@ new_data$trained <- ifelse(pre_data$training_type != 0 & pre_data$treatment_stat
 new_data$has_kids <- ifelse(pre_data$child == 1, 1, 0)
 
 # save data
-write.csv(new_data, "inputs/data/cleaned_data.csv", row.names = FALSE)
+write.csv(new_data, "data/cleaned_data.csv", row.names = FALSE)

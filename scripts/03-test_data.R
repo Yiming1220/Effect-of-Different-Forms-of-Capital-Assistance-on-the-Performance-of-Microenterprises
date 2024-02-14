@@ -1,7 +1,17 @@
+#### Preamble ####
+# Purpose: To validate the cleaned dataset for integrity of treatment status, 
+# correctness of binary variables, and adherence of continuous variables to specified ranges.
+# Author: Yiming Tang
+# Date: 10 Feb 2024
+# Contact: ym.tang@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: R environment with the 'readr' package installed.
 
+#### Workspace setup ####
 library(readr)
 
-data <- read_csv("inputs/data/cleaned_data.csv") 
+#### Test Data ####
+data <- read_csv("data/cleaned_data.csv") 
 
 # define.a funciton to test if treatment status all in 0, 1, 2, and 3
 test_treatment_status_values <- function(data) {
