@@ -11,7 +11,7 @@
 library(readr)
 
 #### Test Data ####
-data <- read_csv("data/cleaned_data.csv") 
+data <- read_csv("inputs/cleaned_data.csv") 
 
 # define.a funciton to test if treatment status all in 0, 1, 2, and 3
 test_treatment_status_values <- function(data) {
