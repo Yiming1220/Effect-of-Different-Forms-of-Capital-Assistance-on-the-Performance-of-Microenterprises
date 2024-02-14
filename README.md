@@ -26,4 +26,4 @@ The repo is structured as the following:
 
 ## Statement of LLM Usage
 
-Part of the code and analysis were completed with the help of ChatGPT. ChatGPT also provided some hints and explanations of our research as references. The entire chat history is available in https://github.com/Yiming1220/Effect-of-Different-Forms-of-Capital-Assistance-on-the-Performance-of-Microenterprises/blob/main/LLM
+Part of the code and analysis were completed with the help of ChatGPT. ChatGPT also provided some hints and explanations of our research as references. The entire chat history is available in llm
