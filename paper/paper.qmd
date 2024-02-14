@@ -1,7 +1,7 @@
 ---
 title: "Assessing the Impact of Financial Assistances on Business and Income Outcomes: A Gender-Specific Analysis"
-author: “Dinning Li Yiming Tang Yingqi Pang” 
-date: “Feb 14 2024”
+author: Dingning Li, Yiming Tang, Yingqi Pang 
+date: “`r format(Sys.time(), '%d %B %Y')`”
 format: pdf
 ---
 
