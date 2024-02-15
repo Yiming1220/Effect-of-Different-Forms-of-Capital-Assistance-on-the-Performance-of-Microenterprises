@@ -29,4 +29,4 @@ The repo is structured as the following:
 Part of the code and analysis were completed with the help of ChatGPT. ChatGPT also provided some hints and explanations of our research as references. The entire chat history is available in https://github.com/Yiming1220/Effect-of-Financial-Assistance-on-Business-and-Income-Outcomes/tree/ac992b55eaa64b2571fd88ea744465068d64a117/llm
 
 ## SSRP
-The replication of the Social Science Reproduction Platform(SSRP) can be found: https://www.socialsciencereproduction.org/reproductions/7995523b-d7e7-45b5-8fd8-2791095ac842/index
+The replication of the Social Science Reproduction Platform(SSRP) can be found: https://doi.org/10.48152/ssrp-ybfz-kw71
