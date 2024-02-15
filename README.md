@@ -27,3 +27,6 @@ The repo is structured as the following:
 ## Statement of LLM Usage
 
 Part of the code and analysis were completed with the help of ChatGPT. ChatGPT also provided some hints and explanations of our research as references. The entire chat history is available in https://github.com/Yiming1220/Effect-of-Financial-Assistance-on-Business-and-Income-Outcomes/tree/ac992b55eaa64b2571fd88ea744465068d64a117/llm
+
+## SSRP
+The replication of the Social Science Reproduction Platform(SSRP) can be found: https://doi.org/10.48152/ssrp-ybfz-kw71
