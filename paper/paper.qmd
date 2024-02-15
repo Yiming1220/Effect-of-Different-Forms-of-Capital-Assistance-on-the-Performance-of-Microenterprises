@@ -52,7 +52,7 @@ We assessed the impact of financial interventions on several outcome variables:
 
 - **New Business Assets (`new_biz_assets`)**: A continuous variable representing the total value of new assets acquired by the business post-intervention. It is defined by the sum of inventory stocks, finished goods, liquid cash reserves, value of new business premises, recently purchased land, furniture, machinery and equipment, vehicles, and the cost of maintenance for these assets. 
 
-- **Monthly Expenses**: A continuous variable summing all monthly costs incurred by the business. This reflects the immediate financial activity and potential expansion resulting from the intervention.
+- **Monthly Expenses (`monthly_expenses`)**: A continuous variable summing all monthly costs incurred by the business. This reflects the immediate financial activity and potential expansion resulting from the intervention.
 
 - **Monthly Profits (`monthly_profits`)**: Calculated as the difference between revenue and expenses, this variable measures the profitability of the business, a key indicator of financial viability.
 
