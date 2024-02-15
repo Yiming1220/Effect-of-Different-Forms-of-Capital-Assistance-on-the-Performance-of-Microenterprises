@@ -8,6 +8,7 @@ format: pdf
 bibliography: references.bib
 toc: true
 toc-depth: 3
+thanks: "Code and data are available at https://github.com/Yiming1220/Effect-of-Financial-Assistance-on-Business-and-Income-Outcomes.git. Reproduction record available at https://doi.org/10.48152/ssrp-ybfz-kw71"
 ---
 # Introduction
 
