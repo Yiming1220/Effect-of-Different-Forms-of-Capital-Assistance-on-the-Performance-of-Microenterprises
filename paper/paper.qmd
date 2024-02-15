@@ -32,11 +32,14 @@ A new dataset (`new_data`) was created to store the cleaned variables.
 
 ## Treatment Variables
 We treated the `treatment_status` variable by creating dummy variables for each type of financial support, resulting in four different treatment levels:
-- **Control ()**: 
-- **Other()**
-# TODO: ADD variable name and explanation for four different treatment dummies
 
-...
+- **Loans (`micro_credit`)**: Dummy variable indicating whether the participant received loans. A loan is a sum of money that is borrowed, often from a bank or financial institution, that is expected to be paid back with interest.
+
+- **Cash Grants (`cash_grant`)**: Dummy variable indicating whether the participant received cash grant. Cash grants are funds that are given to individuals, businesses, or organizations for a specific purpose and do not need to be repaid. 
+
+- **In-Kind Grants (`in_kind_grant`)**: Dummy variable indicating whether the participant received in-kind grant. In-kind grants include goods or services provided to the entrepreneur that have a direct utility in the business but are not monetary in form. Like cash grants, in-kind grants do not need to be repaid.
+
+- **Control (`control`)**: Dummy variable indicating whether the participant received any financial intervention.
 
 We defined several key outcome variables to assess the impact of the financial interventions:
 
@@ -45,11 +48,17 @@ We defined several key outcome variables to assess the impact of the financial i
 We assessed the impact of financial interventions on several outcome variables:
 
 - **Business Ownership (`hasbiz`)**: A binary outcome variable indicating whether an entrepreneur owned a business. An individual does not have business if they do not have project or have no income source.
+
 - **New Business Assets (`new_biz_assets`)**: A continuous variable representing the total value of new assets acquired by the business post-intervention. It is defined by the sum of inventory stocks, finished goods, liquid cash reserves, value of new business premises, recently purchased land, furniture, machinery and equipment, vehicles, and the cost of maintenance for these assets. 
+
 - **Monthly Expenses**: A continuous variable summing all monthly costs incurred by the business. This reflects the immediate financial activity and potential expansion resulting from the intervention.
+
 - **Monthly Profits (`monthly_profits`)**: Calculated as the difference between revenue and expenses, this variable measures the profitability of the business, a key indicator of financial viability.
+
 - **Monthly Revenue (`monthly_revenue`)**: The total monthly sales before costs, representing the operational turnover and market activity of the business.
+
 - **Labour Income (`labour_inc`)**: It is calculated by summing the monthly profit, wage income, and other labour income source.
+
 - **Total Income (`total_inc`)**: It is calculated by summing the monthly profit, wages, rental income from assets, other income streams not categorized as labor income, government support values, and received transfers.
 
 These variables were chosen for their relevance to the business cycle and their potential to reflect the direct and indirect effects of financial support. Each measure is designed to capture different facets of business performance and growth, thereby providing a comprehensive view of the impact of financial assistance. 
@@ -120,6 +129,7 @@ For the male participants in our study, as shown in Table 4, the impact of vario
 \input{../outputs/tables/business_outcome_male.tex}
 ```
 
+
 ## Divergent Effects on Male vs. Female Entrepreneurs 
 
 
@@ -178,6 +188,8 @@ The research of financial support and their impacts on business and income outco
 While addressing potential biases in our data collection is crucial for ensuring the validity and reality of our results, it is also important to focus on the ethical concerns to protect use of collected data and information. In any research, strict ethical standard governing the use of data are essential, especially those involving financial and personal outcomes. Participant privacy and the confidentiality of the information they provide must be maintained from the beginning of data collection through analysis and final results. It is a matter of trust that participants place in the research process and in the researchers themselves. Participants must be given clear and comprehensive information about how their data will be used, and researchers must be given informed consent that clarifies the scope of data application. This consent is a binding agreement, and any deviation from the specified use may constitute a breach of trust and may constitute a legal infringement.
 
 
-# Conclusion: 
+# Conclusion
 
 In the comprehensive analysis of microenterprise development, the study delves into the impact of different types of financial support—microcredit, in-kind grants, and cash grants—on business outcomes and income with a particular focus on gender-specific effects. It finds that while financial support, in general, has a positive effect on the performance of microenterprises, the nature of these effects varies significantly between male and female entrepreneurs. For female participants, in-kind grants show a consistent positive impact on monthly profits, indicating a potential for efficient resource management and an increase in profitability. However, both in-kind and cash grants lead to a significant decrease in new asset acquisition for women. This suggests that while these forms of support can enhance profitability, they may not necessarily translate into asset growth for female entrepreneurs. Male entrepreneurs, on the other hand, do not exhibit the same positive trends in monthly profits from financial interventions. However, there is evidence of an increase in new asset acquisition with financial treatment, pointing to a different pattern of financial support utilization between genders. When it comes to income outcomes, the study indicates that women benefit more from financial supports, especially cash grants, which significantly increase both labor and total income for female participants. For men, the effects are less pronounced, with no clear positive impact on total income and a mixed impact on labor income. The study underscores the complexity of the relationship between the type of financial support and business outcomes, emphasizing the need for gender-specific approaches in designing and implementing microenterprise development programs. 
+
+# References
