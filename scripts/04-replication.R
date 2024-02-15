@@ -68,7 +68,7 @@ models <- lapply(names(var2name), function(var) {
   regress(data, var, "outputs/figures/", var2name)
 })
 
-stargazer(models, type = "html", out = "outputs/tables/business_outcome.html",
+stargazer(models, type = "latex", out = "outputs/tables/business_outcome.tex",
           title = "Business Outcome",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -105,7 +105,7 @@ female_models <- lapply(names(var2name), function(var) {
 })
 
 
-stargazer(female_models, type = "html", out = "outputs/tables/business_outcome_female.html",
+stargazer(female_models, type = "latex", out = "outputs/tables/business_outcome_female.tex",
           title = "Business Outcome - Female Participants",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -114,7 +114,7 @@ stargazer(female_models, type = "html", out = "outputs/tables/business_outcome_f
           no.space = TRUE)
 
 
-stargazer(male_models, type = "html", out = "outputs/tables/business_outcome_male.html",
+stargazer(male_models, type = "latex", out = "outputs/tables/business_outcome_male.tex",
           title = "Business Outcome - Male Participants",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -132,7 +132,7 @@ models <- lapply(names(var2name), function(var) {
   regress(data, var, "outputs/figures/", var2name)
 })
 
-stargazer(models, type = "html", out = "outputs/tables/income_outcome.html",
+stargazer(models, type = "latex", out = "outputs/tables/income_outcome.tex",
           title = "Income Outcome",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -159,7 +159,7 @@ female_models <- lapply(names(var2name), function(var) {
 })
 
 
-stargazer(female_models, type = "html", out = "outputs/tables/income_outcome_female.html",
+stargazer(female_models, type = "latex", out = "outputs/tables/income_outcome_female.tex",
           title = "Income Outcome - Female Participants",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -168,7 +168,7 @@ stargazer(female_models, type = "html", out = "outputs/tables/income_outcome_fem
           no.space = TRUE)
 
 
-stargazer(male_models, type = "html", out = "outputs/tables/income_outcome_male.html",
+stargazer(male_models, type = "latex", out = "outputs/tables/income_outcome_male.tex",
           title = "Income Outcome - Male Participants",
           covariate.labels = c("Micro Credit", "In-Kind Grant", "Cash Grant"),
           column.labels = var2name,
@@ -202,10 +202,10 @@ models <- lapply(varlist, function(var) {
   lm(reformulate("treatment_status", response = var), data = data)
 })
 
-stargazer(models, type = "html", title = "Baseline Balance",
+stargazer(models, type = "latex", title = "Baseline Balance",
           font.size = "small", digits = 2,
           no.space = TRUE, single.row = TRUE,
-          out = "outputs/tables/baseline_balance.html",
+          out = "outputs/tables/baseline_balance.tex",
           add.names = TRUE,
           covariate.labels = c("Control", "Microcredit", "In-Kind Grant", "Cash Grant"),
           column.labels = varname,

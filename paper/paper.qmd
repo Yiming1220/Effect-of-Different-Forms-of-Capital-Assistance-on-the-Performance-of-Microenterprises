@@ -1,10 +1,11 @@
 ---
-title: "Assessing the Impact of Financial Assistances on Business and Income Outcomes: A Gender-Specific Analysis"
-author: Dingning Li, Yiming Tang, Yingqi Pang 
-abstract: "This study replicates and extends the investigation into the differential impacts of financial support on microenterprise performance, considering the gender of entrepreneurs. Analyzing data from 3,294 entrepreneurs, we explored the impact of loans, cash grants, and in-kind grants on business ownership, assets, and profitability, while accounting for personal characteristics. We found that all forms of financial support positively affect microenterprise growth, but in-kind grants are particularly beneficial, especially for female entrepreneurs. This research points to the importance of customizing financial interventions to consider gender, aiming to support economic empowerment and microenterprise resilience.
-date: “`r format(Sys.time(), '%d %B %Y')`”
+title: "Assessing the Impact of Financial Assistance on Business and Income Outcomes: A Gender-Specific Analysis"
+author: "Dingning Li, Yiming Tang, Yingqi Pang"
+abstract: "This study replicates and extends previous research on the differential impacts of financial support on microenterprise performance, with a focus on the entrepreneurs' gender. By analyzing data from 3,294 entrepreneurs, we explored the effects of loans, cash grants, and in-kind grants on business ownership, assets, and profitability, while taking personal characteristics into account. Our findings suggest that all forms of financial assistance positively influence microenterprise growth, with in-kind grants being particularly advantageous, especially for female entrepreneurs. This research underscores the importance of tailoring financial interventions to consider gender differences, aiming to promote economic empowerment and enhance microenterprise resilience."
+date: "`r format(Sys.time(), '%d %B %Y')`"
 format: pdf
 ---
+
 
 # Introduction
 
@@ -25,8 +26,11 @@ The original research paper used Stata (StataCorp 2021) for data processing and 
 
 # Experiment 
 // TODO: Table 1: Baseline Balance of Variables Across Treatment Status
-
 This experiment appears to have been designed to assess the influence of four treatments on a range of business-related outcomes. The process of randomization was employed to ensure that each participant in the experiment had an equal chance being assigned to any treatment groups. This methodological choice that facilitates the balancing of known and unknown mixing variables in these groups. Table 1 provided suggest that this randomization process was successful, as indicated by the balance check labeled “TRUE”. It confirms that the baseline characteristics were evenly distributed among the different treatment groups. This implies that any subsequent differences can be attributed to the effects of the treatments confidently rather than pre-existing differences among participants.
+
+::: {.figure}
+![Baseline Balance](../outputs/tables/baseline_balance.png){width=99%}
+:::
 
 
 # Data Cleaning and Processing
@@ -72,6 +76,10 @@ Throughout the data cleaning and processing stages, we paid meticulous attention
 
 Table 2 provides a comprehensive summary of the business outcome for participants across different financial support programs: Micro Credit, In-Kind Grant, and Cash Grant. The table illustrates key financial indicators such as business ownership, acquisition of new assets, monthly expenditure, monthly revenue and monthly profit. Each entry is accompanied by standard errors in parentheses, offering insights into the variability and reliability of the observed data. The number of observations, denoted by N, stands at 3075 in total for each category, which indicates sample size for the analysis. The table summarize varied impacts of the different financial interventions on the economic activities of the participants. In the following discussion, we will examine the empirical data presented in Table1 for analyzing the effectiveness of these financial support mechanisms in contributing to the business outcomes. 
 
+::: {.figure}
+![Business Outcome](../outputs/tables/business_outcome.png){width=99%}
+:::
+
 Starting with business ownership (Has Business), all illustrate in the first column indicates that none of Micro credit contribute to the increase in business ownership with a value of 0 with a standard error of 0.02. In contrast, In-Kind Grant shows a slight positive effect, with a 0.01 increase, and Cash Grant reflects a slight negative change, but the accompanying standard errors suggest that these changes are not statistically significant. In the domain of New Asset column, all interventions appear to associate with a decrease in assets, with Micro Credit recipients showing a notable reduction. These negative figures coupled with standard errors, suggest all three financial supports are statistically insignificant to result of asset acquisition. Both of the “Monthly Expenditure” column and the “Monthly Revenue” column depict a decrease across all groups of business outcomes, with largest decrease seen in the Cash Grant group for Monthly Expenditure and Micro Credit for Monthly Revenue. While it comes to “Monthly Profit”, In- Kind Grant shows an positive relationship with monthly profit once again, this could indicates that the recipients of In-Kind Grant are managing their resources more efficiently. 
 
 Overall, the impacts of these financial interventions on business outcomes are nuanced. Particularly, the In-Kind Grant shows a potential for increasing profitability despite lower revenues, suggesting that the input of the grant may lead to more efficient business outcomes or cost savings. However, it is noticeable that the high standard error across the outcomes indicates the considerable variation within the sample. T-value calculated based on the given data, mostly reflects the result as statistically insignificant, which means that the data does not provide strong evidence that there is a true effect or different present, beyond what have occurred by random chance. Statistically insignificance does not necessarily indicate that there is no difference or that the effect does not exist. It may indicate that study did not have enough power due to missing considerations to detect an effect, or that the effect is smaller than what the study was designed to identify. 
@@ -83,28 +91,49 @@ In the initial of our study, gender differences were not considered in our analy
 
 //TODO: Table 3.1:  Impacts of Financial Supports on Business Outcomes Among Female Participants
 
-The table summarizes the business outcome for female participation, illustrating a detailed impact of financial interventions, there is a marginal positive effect on the likelihood of having a business with Micro credit and In-kind Grant, while Cash Grant shows a slight negative influence. When looking at the acquisition of new assets, all these three financial supports are associated with significant negative impacts. Monthly expenditures also decreased across all types of financial aid, suggesting a reduction in business spending. Monthly profit shows a relatively small negative influence compared with New Asset for all financial assistance. Notably, only Monthly profit depict a positive change with the receipt of an In-Kind Grant, Micro Credit and Cash Grant, these effects are relatively small and less likely observed with other forms of capital assistance. This pattern highlights the complex relationship between the type of financial support and varied business outcomes among female leaders. 
+The table summarizes the business outcome for female participation, illustrating a detailed impact of financial interventions, there is a marginal positive effect on the likelihood of having a business with Micro credit and In-kind Grant, while Cash Grant shows a slight negative influence. When looking at the acquisition of new assets, all these three financial supports are associated with significant negative impacts. Monthly expenditures also decreased across all types of financial aid, suggesting a reduction in business spending. Monthly profit shows a relatively small negative influence compared with New Asset for all financial assistance. Notably, only Monthly profit depict a positive change with the receipt of an In-Kind Grant, Micro Credit and Cash Grant, these effects are relatively small and less likely observed with other forms of capital assistance. This pattern highlights the complex relationship between the type of financial support and varied business outcomes among female leaders.
+
+::: {.figure}
+![](../outputs/tables/business_outcome_female.png){width=99%}
+:::
 
 //TODO: Table 3.2: Impacts of Financial Supports on Business Outcomes Among Male Participants
 For the male participants in our study, the impact of various form of capital assistance displays the same complex pattern across different business outcomes. The likelihood of owning a business does not significantly change with the introduction of Micro Credit, In-Kind Grant, or Cash Grant, it’s evident by the negligible coefficients. However, positive performances are shown on the New Asset, with the latter showing a slightly larger effect on In-Kind Grant. Monthly Expenditure decreases significantly with all forms of capital assistance, which may indicate more efficient business operations or a reduction in business size or activity, which is similar with that of female participants. In terms of Monthly Revenue, we observed a decline with Micro Credit and a more obvious decline with Cash Grants, but there is only slight change with In-Kind Grants. Lastly, Monthly Profit does not show notable improvement with the capital assistance provided, although there is a insignificant trend towards reduced profits, particularly with Micro Credit and Cash Grants. 
 
+::: {.figure}
+![](../outputs/tables/business_outcome_male.png){width=99%}
+:::
+
 ## Divergent Effects on Male vs. Female Entrepreneurs 
 
-//TODO: Figure 1: Female Monthly Profit vs. Male Monthly Profit
 
 The comparison of graphical representations for the impact of capital assistance on monthly profit distinctly show that women have a more positive response than men. For female participants, the financial interventions, especially In-Kind Grant reflect the result in a clear increase in monthly profit, as indicates by the positive values above zero line. In contrast, the response from male participants to the same financial interventions show a more converse outcome, where the change in monthly profits does not show a consistent increase with coefficient below the zero line. The graphs indicates that the impact on men’s monthly profits does not present a similar positive trend as observed for women. Therefore, the data suggests that women experience a more positive performance of monthly profit from assistance compare to men. 
 
-//TODO: Figure 1.2: Female New Asset vs. Male New Asset
+::: {.figure}
+![Female Monthly Profit](../outputs/figures/femaleFemale - Monthly Profit.jpg){width=49%}
+![Male Monthly Profit](../outputs/figures/maleMale - Monthly Profit.jpg){width=49%}
+:::
 
 Another notable business outcome is new asset acquisition present a obvious contrast between female and male participants. For female participants, the treatment groups, especially Cash Grant, are associated with a substantial decrease in New Asset, as indicated by the negative coefficient. Conversely, for male participants, the treatments appear to correlate with an increase in New Asset, with all treatment groups showing positive values. The comparison indicates the capital assistance translate into an increase in assets for male entrepreneurs more efficient than female entrepreneurs This difference underscores the distinct outcomes and potential uses for financial support between genders in the context of asset accumulation. 
 
 Based on the visual data presented in the graphs for Monthly Profit and New Asset, it is apparent that female and male participants show different strengths across various business outcomes. While females show positive response in terms of Monthly Profit, indicating a beneficial use of capital in generating income, they seem to have a decrease in new asset acquisition when receiving financial assistance. In contrast, males demonstrate an increase in new asset acquisition with financial treatment, yet their monthly profits do not show the same level of clear positive impact as observed for females. Other business outcomes, where the data is not provided, are presumed to show no significant differences between females and males. This leads to the conclusion that there is no overall dominance in performance by one gender over the other across all assessed business outcomes. Both genders have areas where they excel and other areas where their performance is comparable. 
 
+::: {.figure}
+![Female Monthly Profit](../outputs/figures/femaleFemale - New Asset.jpg){width=49%}
+![Male Monthly Profit](../outputs/figures/maleMale - New Asset.jpg){width=49%}
+:::
+
 ## Gender-Specific Effects of Financial Interventions on Income Outcome
 
 //TODO: Table 4.1: Impacts of Financial Supports on Income Outcomes Among Female Participants
+```{=latex}
+\input{../outputs/tables/income_outcome_female.tex}
+```
 
 //TODO: Table 4.2: Impacts of Financial Supports on Income Outcomes Among Male Participants
+```{=latex}
+\input{../outputs/tables/income_outcome_male.tex}
+```
 
 Before we study the differential impact of financial support on Business Outcomes across genders, Income Outcomes is also a crucial for researching effective economic empowerment programs. Table 4.1 and Table 4.2 offers insight into gender-specific outcomes of three financial supports on income. The data can be analyzed to compare the influence affecting labor income and total income for female and male participants. For female participants, Both Cash Grant and In-Kind Grant appear to have the significant positive effect on both labor and total income, with more substantial effect by providing Cash Grant. Micro Credit, while showing a positive in labor income but converse effect on total income. On the male side, the effects of financial supports are less clear, with Micro Credit and In-Kind Grant associated with decrease in labor income and no clear pattern in total income. However, Cash Grant show a slight positive effect on labor income but a decrease in total income. 
 If we compare the gender-specific effect, it seems that women benefit more from financial supports in terms of income outcomes. This aligns with the idea that women may perform between than men with these types of financial support when it comes to income outcomes. 
